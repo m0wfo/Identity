@@ -2,7 +2,7 @@
 
 @implementation Identity
 
-+ (NSString*)serialNumber
++ (NSString*) serialNumber
 {
   NSString *serial = nil;
   
@@ -21,6 +21,27 @@
   
   IOObjectRelease(platformExpert);
   return serial;
+}
+
++ (NSString*) hardwareUUID
+{
+  NSString *serial = nil;
+  
+  io_service_t platformExpert = IOServiceGetMatchingService(kIOMasterPortDefault,
+                                                            IOServiceMatching("IOPlatformExpertDevice"));
+
+  if (platformExpert) {
+    CFTypeRef serialNumberAsCFString = IORegistryEntryCreateCFProperty(platformExpert,
+                                       CFSTR(kIOPlatformUUIDKey),
+                                       kCFAllocatorDefault, 0);
+                                       
+    if (serialNumberAsCFString) {
+      serial = (NSString *)serialNumberAsCFString;
+    }
+  }
+  
+  IOObjectRelease(platformExpert);
+  return serial; 
 }
 
 @end
