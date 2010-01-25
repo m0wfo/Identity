@@ -1,0 +1,3 @@
+Identity
+
+I needed a stable way of generating a unique identifier on the fly for individual machines. This bundle presents a class method, hashedID which takes the serial number and platform UUID and passes them through a SHA1 hash. Hardware inside the machine may be replaced and the Apple documentation says the SN can be lost, but this should be sufficiently stable for remote identification.
