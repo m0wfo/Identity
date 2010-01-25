@@ -44,6 +44,25 @@
   return serial; 
 }
 
+// + (NSString*) hashedID
+// {
+//   NSString *sn = [self serialNumber];
+//   NSString *concat = [sn stringByAppendingString: [self hardwareUUID]];
+// 
+//   NSData *data = [concat dataUsingEncoding: NSASCIIStringEncoding];
+// 
+//   unsigned char hashBytes[CC_SHA1_DIGEST_LENGTH];
+//   CC_SHA1([data bytes], [data length], hashBytes);
+//   
+//   // NSUInteger *s = sizeof(hashBytes);
+//   
+//   // NSString *out = [[NSString alloc] initWithCharacters:hashBytes length:s];
+//   
+//   NSString *aa = [NSString stringWithCString: hashBytes encoding: NSASCIIStringEncoding]; 
+//   
+//   return aa;
+// }
+
 @end
 
 void Init_Identity()

@@ -9,4 +9,5 @@
 
 +(NSString*) serialNumber;
 +(NSString*) hardwareUUID;
+// +(NSString*) hashedID;
 @end
