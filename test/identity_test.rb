@@ -11,5 +11,5 @@ uuid_from_identity = Identity.hardwareUUID
 p uuid == uuid_from_identity
 
 
-# p Digest::SHA1()
-# p Identity.hashedID
+# p Digest::SHA1.hexdigest(Identity.serialNumber+Identity.hardwareUUID)
+p Identity.hashedID
