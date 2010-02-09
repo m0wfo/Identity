@@ -1,5 +1,4 @@
 #import <Cocoa/Cocoa.h>
-// #import <CommonCrypto/CommonDigest.h>
 #include <CoreFoundation/CoreFoundation.h>
 #include <IOKit/IOKitLib.h>
 
@@ -7,7 +6,8 @@
 {
 }
 
++(NSString*) getKey:(CFStringRef*) keyName;
 +(NSString*) serialNumber;
 +(NSString*) hardwareUUID;
-+(NSString*) hashedID;
+// +(NSString*) hashedID;
 @end
