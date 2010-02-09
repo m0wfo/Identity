@@ -1,6 +1,7 @@
 require "test/unit"
 require File.join(File.expand_path(File.dirname(__FILE__)), "../", "build", "Identity")
 
+# Anybody know why test/unit errors unless I declare the bundle constant here?
 Identity
 
 class IdentityTest < Test::Unit::TestCase
@@ -18,6 +19,8 @@ class IdentityTest < Test::Unit::TestCase
     assert_equal(@@uuid, uuid_from_identity)
   end
   
+  # Not hashing this for now. Still can't work out what the
+  # encoding problem is.
   def test_hashed_id_concatenates_identifiers
     assert_equal(Identity.hashedID, @@hashed_id)
   end
